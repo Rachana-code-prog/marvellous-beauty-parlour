@@ -1,0 +1,964 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ----------------utility classes--------------------- */
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+.btn{
+    display: inline-block;
+    padding: .9em 1.9em;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor:pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform:uppercase ;
+    font-weight: 547;
+    color: black;
+    background-color: #fcfcfc;
+    width: 120px;
+    height: 50px;
+    text-decoration: none;
+}
+.btn:hover{
+    box-sizing: border-box;
+    background-color:#a8e5ffbd;
+    border: 1px #1b2b7a solid;
+    color: white;
+    width: 120px;
+    height: 50px;
+}
+
+/* ------------------------------------------navbar stylin------------------------------- */
+
+
+/* -----------for desktop mode ------------*/
+
+.navbar input[type='checkbox'],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #edf5ff ;
+    color: #000;
+    opacity: 0.75;
+    z-index: 99;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+}
+.menu-items li{
+    list-style: none;
+    margin-left: 1.3em;
+    font-size: 1.5em;
+}
+.logo{
+    order: 1;
+    font-size: 2em;
+}
+.red-text{
+    color: red;
+}
+.navbar a{
+    color: #444;
+    font-weight: 540;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 1.5px solid transparent ;
+    text-decoration: none;
+    padding:0px 5px;
+}
+.navbar a:hover{
+    color: #117964;
+    border-bottom: 1.5px solid #0a6956;
+
+}
+
+
+
+/* ---------------showcase area--------------------------------- */
+
+.showcase-area{
+    height: 55vh;
+    background-image:linear-gradient(rgba(240, 240, 240, 0.425),rgba(255,255,255,.336)) ,url(./images/parlour.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.showcase-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+    height: 100%;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    padding: 2em;
+}
+.main-title{
+    text-transform: capitalize;
+}
+.showcase-container p{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+/* ------------------------------------------about us---------------------------------- */
+#about{
+    padding: 50px 0px;
+    background-color: #f5f5f5;
+}
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Keeps text and image perfectly centered with each other */
+    justify-content: center;
+    gap: 20px; /* Adds a nice gap between the image and text blocks */
+}
+
+#about h2 {
+    font-size: 3.2em;
+    margin-bottom: 15px; /* Adds breathing room under the title */
+}
+
+#about .small {
+    font-size: 1.6rem;
+    color: #666;
+    font-weight: 570;
+    line-height: 1.6; /* Adds space between text lines so it is easier to read */
+}
+/* .about-img{
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    /* border: #444 solid; /
+    animation: about-img-animation 1.3s ease-in-out forwards;
+} */
+
+.about-img, .about-text {
+    flex: 1 1 400px;
+    padding: 30px;
+    opacity: 0; /* Hidden by default until active */
+    transition: opacity 0.3s ease;
+}
+.about-text{
+    margin: auto;
+    max-width: 550px; /* Keeps the text lines from stretching too wide */
+    padding: 20px;
+}
+.about-img{
+    max-width: 500px;
+    padding: 20px;
+}
+
+
+.about-text.animate-now {
+    animation: about-text-animation 1.3s ease-in-out forwards;
+}
+
+.about-img.animate-now {
+    animation: about-img-animation 1.3s ease-in-out forwards;
+}
+
+@keyframes  about-img-animation {
+    0%{
+        transform:translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+    
+}
+/* .about-text{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translateX(-150%);
+    animation:  about-text-animation 1.3s ease-in-out forwards;
+} */
+@keyframes  about-text-animation {
+    0%{
+        transform:translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+    
+}
+.about-img img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: right;
+}
+
+
+
+/* ------------------------------service menu styling------------------------------------------ */
+
+.service-menu-heading{
+    padding-top: 2rem;
+    font-size: 5rem;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 500;
+    color: #666;
+}
+.service-menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px 30px 0px;
+    
+
+
+}
+.service-menu-container img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.service-menu-item{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+.service-description{
+    margin: auto 1.5rem;
+    max-width: 400px;
+}
+.service-title{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #282222;
+}
+.service-description{
+    font-size: 1.1rem;
+}
+.service-price-range{
+    color: #1b2b7a;
+    font-weight: 600;
+}
+
+
+.service-description p {
+    font-size: 1.9rem;  /* 👈 This bumps up your paragraph text size beautifully! */
+    line-height: 1.6;   /* Gives lines room so they are easy to read */
+    color: #444;        /* Dark gray color for professional contrast */
+}
+
+/* Targets only your price range paragraph tag line */
+.service-description .service-price-range {
+    font-size: 1.6rem;  /* Makes the price text slightly larger and stand out */
+    color: #1b2b7a;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+#about h2, .service-menu-heading {
+    text-decoration: underline;
+    text-underline-offset: 8px; /* Adds a nice gap between the text and the line */
+}
+
+/* -------------------- Fixed Tier Combo Packages Style -------------------- */
+#package-menu {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.packages-heading {
+    font-size: 3.5rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: #666; /* Clean black accent line */
+}
+
+.packages-subheading {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+
+.package-heading {
+    font-size: 2.5rem;
+    color: #555555; /* The clean dark grey color we decided on */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.package-subheading {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.packages-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* 👈 This forces all 3 cards to be the exact same height! */
+    gap: 25px;
+}
+
+/* Base Card Styling using your Blue, White, Black theme */
+.text-only-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    flex: 1 1 300px;
+    max-width: 340px;
+    background-color: #f7faff; /* Very soft theme blue/white backdrop tint */
+    border: 1px solid #d0e1f9; /* Delicate blue accent boundary borders */
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Elegant lift behavior when hovering your cursor over a card */
+.text-only-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(26, 79, 138, 0.15); /* Soft glowing blue tint shadow */
+}
+
+/* Card Headers */
+.package-title {
+    font-size: 2.4rem;
+    color: #111111; /* Strong black text for tier names */
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Items list formatting */
+.package-items-list {
+    list-style: none;
+    font-size: 1.5rem;
+    color: #444444; /* Clean dark grey text for readability */
+    line-height: 2.2; 
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 0;
+}
+
+.package-items-list li {
+    text-align: center;
+    border-bottom: 1px dashed #e2e8f0; /* Soft break line between services */
+    padding: 4px 0;
+}
+
+.package-items-list li:last-child {
+    border-bottom: none; /* Removes the bottom line from the last item */
+}
+
+/* Pricing Section at the absolute bottom */
+.price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto; /* Permanently seals prices to the bottom card row edge */
+    width: 100%;
+    padding-top: 15px;
+    border-top: 1px solid #d0e1f9;
+}
+
+.old-price {
+    font-size: 1.8rem;
+    color: #999999;
+    text-decoration: line-through; /* Crosses out old price code */
+}
+
+.new-price {
+    font-size: 2.6rem;
+    color: #1a4f8a; /* Your rich main salon blue theme color */
+    font-weight: bold;
+}
+
+/* -------------------- Discount Banner Style -------------------- */
+#discount-banner {
+    background-color: #1a4f8a; /* Bright pink color matching your image */
+    padding: 40px 0;
+    color: white;
+    height: auto;
+    min-height: 0;
+}
+
+.banner-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* The White Round Badge Box */
+.discount-badge {
+    background-color: white;
+    color: #111111;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 4px dashed #1a4f8a; /* Creates the beautiful inside ring */
+    outline: 6px solid white;    /* Creates the clean white outside margin edge */
+}
+
+.badge-number {
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.badge-text {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Text Content Area */
+.banner-content {
+    flex: 1 1 450px; /* Lets the text block wrap nicely if the screen is narrow */
+}
+
+.banner-content h2 {
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    color: #edf5ff;
+}
+
+/* The Border Outline Button Box */
+.book-btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: 2px solid white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Button Hover State Animation */
+.book-btn:hover {
+    background-color: white;
+    color: #111111;
+}
+
+
+
+/* -------------------- Contact Footer Style -------------------- */
+#contact {
+    padding: 60px 0 20px 0;
+    background-color: #fafbfc; /* Light clean grey/white background */
+    color: #333;
+    margin-top: 40px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.contact-gradient-shape{
+    width: 50px;
+    height: 30px;
+    background: linear-gradient(-140deg, #1a4f8a, #91c4fb50);
+    border-radius: 25px 0 25px 0;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(26, 79, 138, 0.2);
+    position: absolute;
+    top: -2.3rem;
+}
+
+.contact-sub {
+    font-size: 2.4rem;
+    color: #1a4f8a; /* Your theme blue */
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 9;
+}
+/* .contact-sub::before{
+    content: '';
+    display: block;
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#1a4f8a, #7dbbfc) ;
+     z-index: 0;
+    position:relative;
+
+    top: 1em;
+    left: 40vw;
+    
+} */
+
+.contact-header h2 {
+    font-size: 3.8rem;
+    color: #222;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.contact-box {
+    flex: 1 1 300px;
+}
+
+.contact-box h3 {
+    font-size: 2.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.contact-box p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Right-aligns text on desktop to match reference image */
+.right-box {
+    text-align: right;
+}
+
+.blue-icon {
+    color: #1a4f8a; /* Theme blue for bullet points or icons */
+    font-size: 1.8rem;
+    margin: 0 5px;
+}
+
+/* Footer & Social Icons Styling */
+.footer-bottom {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #1a4f8a; /* Blue borders for icons */
+    color: #1a4f8a;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #1a4f8a;
+    color: white;
+}
+
+.copyright {
+    font-size: 1.2rem;
+    color: #999;
+}
+/* ---- Professional Clickable Contact Links ---- */
+.contact-item-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none; /* Removes standard ugly blue underline */
+    color: #666; /* Matches your existing body text color */
+    font-size: 1.5rem; /* Matches your paragraph sizing */
+    padding: 8px 14px;
+    border-radius: 6px;
+    background-color: transparent;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+/* Forces right-to-left layout order ONLY on desktop right-box view to match your screen layout */
+.right-box .contact-item-link {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Interactive feedback when user mouse hovers over the element */
+.contact-item-link:hover {
+    background-color: #91c4fb30; /* Your theme's translucent blue shade */
+    color: #1a4f8a; /* Text highlights to theme blue */
+}
+
+/* Add a crisp little scale bump to the Font Awesome icon inside on hover */
+.contact-item-link:hover .blue-icon {
+    transform: scale(1.15);
+    color: #1a4f8a;
+}
+
+/* Base icon transitions */
+.blue-icon {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Extra safety rule: prevents text from dropping layout alignments */
+.right-box p {
+    text-align: right;
+}
+
+
+/* -----------------------------------media queries-------------------------------- */
+
+@media(max-width: 768px) {
+    .navbar {
+        opacity: 0.95;
+    }
+    
+    .navbar-container input[type='checkbox'],
+    .navbar-container .hamburger-lines {
+        display: block;
+    }
+    
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 70px; /* Allows the bar to expand if text wraps */
+        padding: 10px 0;
+        position: relative;
+    }
+    
+    .navbar-container input[type='checkbox'] {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 40px;
+        top: 20px;
+        left: 0px; /* Aligns smoothly with container padding */
+        z-index: 5;
+        opacity: 0;
+    }
+    
+    .navbar-container .hamburger-lines {
+         /* display: block; */
+        height: 32px;
+        width: 40px;
+        position: absolute;
+        top:20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .navbar-container .hamburger-lines .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #333;
+    }
+    
+    .navbar-container .hamburger-lines .line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    .navbar-container .hamburger-lines .line2 {
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    .navbar-container .hamburger-lines .line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar .menu-items {
+        position: absolute; /* Kept out of the normal layout flow */
+        top: 60px;
+        left: -5%;
+        padding-top: 50px;
+        background: #fff;
+        height: 100vh;
+        width: 300px;
+        transform: translateX(-150%);
+        display: flex;
+        flex-direction: column;
+        padding-left: 28px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+    }
+    
+    .navbar .menu-items li {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    
+    /* Removed position: absolute and z-index: -1 to fix the overlapping */
+    .logo {
+        font-size: 1.6rem; 
+        text-align: right;
+        margin-left: auto; /* Pushes the logo to the far right side */
+        padding-left: 50px; /* Prevents text from hitting the burger menu */
+    }  
+    
+    .navbar-container input[type='checkbox']:checked ~ .menu-items {
+        transform: translateX(0);
+    }  
+    
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line1 {
+        transform: rotate(45deg);
+    }
+    
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line2 {
+        transform: scale(0);
+    }   
+    
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line3 {
+        transform: rotate(-45deg);
+    } 
+    .service-menu-container {
+        flex-direction: column; /* Stack all items into a single vertical column */
+        align-items: center;
+    }
+
+    .service-menu-item {
+        flex-direction: column; /* Force the text content directly below the circle image */
+        align-items: center;    /* Center the image and text blocks perfectly */
+        text-align: center;     /* Center the internal paragraph text lines */
+        flex: 1 1 100%;         /* Let each item fill the responsive row width */
+        margin-bottom: 4rem;    /* Give generous breathing room before the next item */
+        
+    }
+
+    .service-description {
+        margin: 1.5rem 0 0 0;   /* Create gap at the top instead of the sides */
+        max-width: 100%;        /* Allow the description box to scale gracefully */
+        padding: 0 15px;        /* Keep paragraph edges safely away from screen rims */
+        max-width: 350px;
+    }
+    /* .service-description h2{
+        font-size: 5em;
+        color: red;
+    } */
+
+    /* -----------------------discount-------------------------- */
+
+    #discount-banner {
+    background-color: #1a4f8a; 
+    padding: 40px 0;
+    color: white;
+    height: auto;        /* 👈 Force the height to adjust to the content naturally */
+    min-height: 0;       /* 👈 Prevent any grid/flex rules from stretching it */
+}
+    #discount-banner .banner-container {
+        flex-direction: column; /* Stacks badge, text, and button vertically */
+        text-align: center;     /* Centers all content on mobile views */
+        justify-content: center;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .right-box {
+        text-align: center; /* Resets right alignment to center on mobile */
+
+    }
+}
+/* ⚡ FORCE BANNER HEIGHT FIX ⚡ */
+@media (max-width: 768px) {
+    /* Mobile layout compressor for the banner */
+@media (max-width: 768px) {
+    #discount-banner {
+        padding: 30px 0; /* Shrinks top/bottom empty padding */
+    }
+
+    #discount-banner .banner-container {
+        flex-direction: column; /* Stacks items tightly in a straight line */
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        gap: 15px; /* Keeps the badge, text, and button close together */
+    }
+
+    .banner-content {
+        flex: none; /* Disables the automatic stretching behavior */
+        width: 100%;
+        max-width: 320px; /* Wraps the text nicely into 2-3 clean lines */
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+}
+/* Mobile layout compressor for the contact footer */
+@media (max-width: 768px) {
+    #contact {
+        padding: 30px 0 20px 0 !important; /* Reduces large top padding */
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .contact-container {
+        height: auto !important;
+    }
+
+    .contact-header {
+        margin-bottom: 25px !important; /* Shrinks gap below the "Visit Our Shop" title */
+    }
+
+    .contact-grid {
+        flex-direction: column !important;
+        gap: 20px !important; /* Pulls "Opening Hours" and "Get In Touch" close together */
+        margin-bottom: 25px !important;
+    }
+
+    .contact-box {
+        flex: none !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
+    }
+
+    .contact-box h3 {
+        margin-bottom: 10px !important; /* Tightens space under column headers */
+    }
+
+    .footer-bottom {
+        padding-top: 20px !important;
+    }
+
+    /* -------------------- Mobile Responsive Rules -------------------- */
+    /* 1. Stack the layout columns vertically instead of side-by-side */
+    .contact-grid {
+        flex-direction: column;
+        gap: 35px;
+        text-align: center;
+    }
+
+    /* 2. Force text alignment to center for both boxes on mobile screens */
+    .contact-box, 
+    .contact-box.right-box,
+    .right-box p {
+        text-align: center !important;
+    }
+
+    /* 3. Re-order the interactive links so icons look uniform when centered */
+    .right-box .contact-item-link {
+        flex-direction: row; /* Puts icons back to the left of text for natural reading */
+        justify-content: center;
+        width: 100%;
+        padding: 12px 16px; /* Larger tap targets for mobile fingers */
+        background-color: #91c4fb15; /* Keeps a very subtle persistent background on mobile */
+        border: 1px solid #91c4fb30;
+    }
+    
+    /* Center the opening hours items neatly */
+    .contact-box p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* 4. Fix heading sizing so it fits cleanly on narrow phone displays */
+    .contact-header h2 {
+        font-size: 2.8rem;
+    }
+}
+/* Extra small mobile screen adjustment */
+@media(max-width: 480px) {
+    .small{
+        font-size: .9rem;
+    }
+    .logo {
+        font-size: 1.4rem; /* Shrinks font slightly more so it fits on 1 line */
+    }  
+    
+    /* Pushes your main landing text further down so the header bar doesn't block it */
+    .showcase-area {
+        padding-top: 80px; 
+    }
+    .about-img img{
+        height: 30vh;
+        width: 90vw;
+        object-fit: cover;
+        object-position: right;
+    }
+}
