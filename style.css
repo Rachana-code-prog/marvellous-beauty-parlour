@@ -148,8 +148,9 @@ body{
 }
 
 #about h2 {
-    font-size: 3.2em;
+    font-size: 4.3em;
     margin-bottom: 15px; /* Adds breathing room under the title */
+    color: #666;
 }
 
 #about .small {
@@ -269,7 +270,7 @@ body{
 }
 .service-title{
     font-size: 2.2rem;
-    font-weight: 600;
+    font-weight: 800;
     color: #282222;
 }
 .service-description{
@@ -307,7 +308,7 @@ body{
     text-align: center;
 }
 
-.packages-heading {
+.packages-main-heading {
     font-size: 3.5rem;
     color: #666;
     font-weight: 500;
@@ -317,16 +318,16 @@ body{
     text-decoration-color: #666; /* Clean black accent line */
 }
 
-.packages-subheading {
+.packages-main-subheading {
     font-size: 1.4rem;
     color: #666;
     margin-bottom: 40px;
 }
 
 
-.package-heading {
+.packages-heading {
     font-size: 2.5rem;
-    color: #555555; /* The clean dark grey color we decided on */
+    /* color: #555555; The clean dark grey color we decided on */
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -421,6 +422,80 @@ body{
     font-size: 2.6rem;
     color: #1a4f8a; /* Your rich main salon blue theme color */
     font-weight: bold;
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontally centers everything inside it */
+    width: 100%;
+    margin: 40px auto 25px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* ---- Heading & Button Layout Container ---- */
+.packages-header-row {
+    display: inline-flex; /* Shrinks the row container to hug the text and button tightly */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px; /* Space between the text block and the button */
+    max-width: 100%;
+}
+
+.packages-title-block {
+    text-align: left;
+}
+
+/* ---- Premium Blue Explore Button Styles ---- */
+.explore-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #1a4f8a; /* Your signature theme blue */
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 30px; /* Smooth rounded button style */
+    box-shadow: 0 4px 10px rgba(26, 79, 138, 0.2);
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover effects for crisp visual feedback */
+.explore-more-btn:hover {
+    background-color: #123963; /* Deeper matching blue on hover */
+    box-shadow: 0 6px 15px rgba(26, 79, 138, 0.35);
+    transform: translateY(-2px);
+}
+
+.explore-more-btn i {
+    transition: transform 0.2s ease;
+}
+
+.explore-more-btn:hover i {
+    transform: translateX(4px); /* Arrow nudges right smoothly on hover */
+}
+
+/* ---- Mobile Responsive Adjustments ---- */
+@media screen and (max-width: 768px) {
+    .packages-header-row {
+        flex-direction: column; /* Stacks the button under heading on small screens */
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .packages-title-block {
+        text-align: center;
+    }
+    .packages-subheading{
+        font-size: 1.5em;
+    }
+    .packages-main-subheading{
+        font-size: 1.5em;
+    }
 }
 
 /* -------------------- Discount Banner Style -------------------- */
@@ -843,9 +918,9 @@ body{
 
     }
 }
-/* ⚡ FORCE BANNER HEIGHT FIX ⚡ */
-@media (max-width: 768px) {
-    /* Mobile layout compressor for the banner */
+
+
+
 @media (max-width: 768px) {
     #discount-banner {
         padding: 30px 0; /* Shrinks top/bottom empty padding */
@@ -867,7 +942,7 @@ body{
         margin-bottom: 5px;
     }
 }
-}
+
 /* Mobile layout compressor for the contact footer */
 @media (max-width: 768px) {
     #contact {
@@ -961,4 +1036,86 @@ body{
         object-fit: cover;
         object-position: right;
     }
+}
+@media (max-width: 380px) {
+    /* 1. Force the navbar and its container to stretch exactly across the screen width */
+    .navbar,
+    .navbar-container {
+        width: 100vw !important;
+        max-width: 100% !important;
+        left: 0 !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important; /* Prevents padding from causing side-scrolling */
+    }
+
+    /* 2. Adjust the hamburger lines to maximize text space */
+    .navbar-container .hamburger-lines,
+    .navbar-container input[type='checkbox'] {
+        left: 10px !important;
+    }
+
+    /* 3. Scale down the logo size and padding so it fits inside the 100vw boundaries */
+    .logo {
+        font-size: 1.2rem !important; /* Makes the font smaller so the whole name fits */
+        padding-left: 40px !important; /* Reduces the left gap to give the text more room */
+        white-space: nowrap !important; /* Keeps it on one line if it fits, or let it wrap if needed */
+        margin-left: auto !important;
+    }
+    /* ---- 320px Contact Section Overlapping Fix ---- */
+#contact .contact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important; /* Forces breathing room between Hours and Contact info */
+}
+
+#contact .contact-box {
+    width: 100% !important;
+    height: auto !important; /* Removes any restricted heights causing overlap */
+}
+
+/* Force the interactive links to clear their heights and stack nicely */
+#contact .contact-item-link {
+    display: flex !important;
+    flex-direction: column !important; /* Stacks the icon on top of the text on tiny screens */
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 12px 10px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure the long text wraps down to multiple lines smoothly instead of overflowing */
+#contact .contact-item-link span,
+#contact .contact-item-link font {
+    white-space: normal !important; /* Breaks the single-line constraint */
+    word-break: break-word !important; /* Splits long words like the email safely if needed */
+    font-size: 1.3rem !important; /* Shrinks the text slightly so it fits the screen width */
+    line-height: 1.4 !important;
+    display: block !important;
+}
+
+/* Centers paragraph margins */
+#contact p {
+    margin-bottom: 15px !important;
+    height: auto !important;
+}
+
+#about .small {
+    font-size: 1.35em; 
+}
+.service-description p{
+    font-size: 1.35em;
+}
+.packages-main-subheading{
+    font-size:1.35em ;
+}
+.packages-subheading{
+    font-size: 1.35em;
+}
+.package-items-list li{
+    font-size: .9em;
+}
 }
