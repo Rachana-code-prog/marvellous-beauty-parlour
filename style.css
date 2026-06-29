@@ -109,7 +109,7 @@ body{
 
 .showcase-area{
     height: 55vh;
-    background-image:linear-gradient(rgba(240, 240, 240, 0.425),rgba(255,255,255,.336)) ,url(./images/parlour.png);
+    background-image:linear-gradient(rgba(240, 240, 240, 0.425),rgba(255,255,255,.336)) ,url(./images/parlourImgjpeg.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
